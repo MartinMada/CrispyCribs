@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crispy Cribs</title>
+    <link rel="stylesheet" href="cornribs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="Foto/logo.png" alt="Crispy Cribs Logo" class="logo-img">
+            <span class="logo-text">Crispy Cribs🌽</span>
+        </a>
+        <nav class="nav">
+            <button class="nav-button" onclick="scrollToSection('beranda')">Home</button>
+            <button class="nav-button" onclick="scrollToSection('menu')">Menu</button>
+            <button class="nav-button" onclick="scrollToSection('tentang')">About</button>
+            <button class="nav-button" onclick="scrollToSection('kontak')">Contact</button>
+        </nav>
+    </header>
+
+    <section class="hero" id="beranda">
+        <h1>Corn Ribs Premium</h1>
+        <p>Rasakan Kenikmatan Crispy ala Jagung Premium</p>
+    </section>
+
+    <main class="container" id="menu">
+        <h2>Menu Kami</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="Foto/cornribs.jpg" alt="Corn Ribs Original" class="product-image">
+                <div class="product-info">
+                    <h3>Original Corn Ribs</h3>
+                    <p>Corn ribs dengan bumbu rahasia original.</p>
+                    <p class="price">Rp 13.000</p>
+                    <a href="https://www.instagram.com/crispycribs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="btn-order">Order Sekarang</a>
+                </div>
+            </div>
+            
+            <!-- <div class="product-card">
+                <img src="https://example.com/corn-ribs2.jpg" alt="Corn Ribs Pedas" class="product-image">
+                <div class="product-info">
+                    <h3>Spicy Corn Ribs</h3>
+                    <p>Corn ribs dengan level pedas mantap</p>
+                    <p class="price">Rp 27.000</p>
+                    <button class="btn-order">Pesan Sekarang</button>
+                </div>
+            </div> -->
+        </div>
+    </main>
+    <footer class="footer" id="kontak">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo footer-logo">
+                    <i class="fas fa-corn fa-2x" style="color: var(--accent-color);"></i>
+                    <span>Crispy Cribs</span>
+                </div>
+                <p>Crispy ala Jagung Premium</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Kontak Kami</h4>
+                <p><a href="https://maps.app.goo.gl/dcaHBCW6CyfVhjtr6" target="_blank"
+                        class="map-link" aria-label="Buka di Google Maps">
+                        <i class="fas fa-map-marker-alt"></i> Taman 2 Monumen Perjuangan, Bandung, Jawa Barat 40132
+                    </a></p>
+                <p><i class="fas fa-phone"></i> (021) 555-0123</p>
+                <p><i class="fas fa-envelope"></i> crispycribs.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Ikuti Kami</h4>
+                <div class="social-links">
+                    <a href="https://wa.me/628123456789" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/crispycribs?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Crispy Cribs. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+                document.getElementById(sectionId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
+                // Update class active
+                document.querySelectorAll('.nav-button').forEach(btn =>
+                    btn.classList.remove('active'));
+                event.target.classList.add('active');
+            }
+
+            // Event listener untuk semua nav button
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sectionId = button.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    scrollToSection(sectionId);
+                });
+            });
+    </script>
+</body>
+</html>
